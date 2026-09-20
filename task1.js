@@ -1,7 +1,14 @@
-function sumNumbersInString(text) {
-	const numbers = text.match(/\d+/g) || [];
+/*Task 1: Need to create JavaScript functions for a sum of numbers in the string (Example 
+like “foo8bar8cat2tc2”)*/
 
-	return numbers.reduce((sum, number) => sum + Number(number), 0);
+function sumofNumbersInString(str) {
+    let sum=0;
+    let pattern=/\d/g ;
+    let num=str.match(pattern) || [];
+    for(let i=0;i<num.length;i++){
+        sum+=Number(num[i]);
+    }
+    return sum;
 }
 
-console.log(sumNumbersInString("foo8bar8cat2tc2"));
+console.log(sumofNumbersInString("foo8bar8cat2tc2"));
